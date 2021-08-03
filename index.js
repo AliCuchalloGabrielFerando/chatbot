@@ -1,7 +1,7 @@
 const express = require('express');
 const { Client } = require('pg');
 const app = express();
-
+const port = process.env.PORT || 3000
 const { WebhookClient } = require("dialogflow-fulfillment");
 const { response } = require('express');
 
@@ -224,7 +224,8 @@ app.post('/webhook', express.json(),function (req, res) {
 
 });
  
-app.listen(3000,()=>{
+app.listen(port,()=>{
+
     console.log("estamos en el servidor");
       
   
